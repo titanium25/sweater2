@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="sweater" uuid="51a7786b-410b-4f51-8b34-96b4f4eb329e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db-sweater.cnvkxb70zrfk.eu-central-1.rds.amazonaws.com:5432/postgres</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="db-sweater.cnvkxb70zrfk.eu-central-1.rds.amazonaws.com" uuid="b183d336-e25c-40f1-9e61-d73ace94f243">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>db-sweater.cnvkxb70zrfk.eu-central-1.rds.amazonaws.com</jdbc-url>
+    </data-source>
+  </component>
+</project>
