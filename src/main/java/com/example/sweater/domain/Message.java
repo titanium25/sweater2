@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.net.URL;
+import java.util.Date;
 
 @Entity
 public class Message {
@@ -24,6 +25,9 @@ public class Message {
     private User author;
 
     private String filename;
+
+//    @Temporal(TemporalType.TIMESTAMP)
+//    private Date creationDateTime;
 
     public Message() {
     }
@@ -77,4 +81,6 @@ public class Message {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 }

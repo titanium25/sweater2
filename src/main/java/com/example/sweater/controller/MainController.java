@@ -18,6 +18,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 import java.util.Optional;
 
@@ -33,7 +39,7 @@ public class MainController {
     @Autowired
     private MessageRepo messageRepo;
 
-//    @Value("${upload.path}")
+    //    @Value("${upload.path}")
 //    private String uploadPath;
 
     @GetMapping("/")
@@ -65,6 +71,12 @@ public class MainController {
             Model model,
             @RequestParam("file") MultipartFile file
             ) {
+
+//        Date date = Calendar.getInstance().getTime();
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+//        String strDate = dateFormat.format(date);
+//        message.setStamp(strDate);
+
         message.setAuthor(user);
 
         if(bindingResult.hasErrors()) {

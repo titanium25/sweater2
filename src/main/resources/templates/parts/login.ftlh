@@ -64,7 +64,7 @@
         </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <#if !isRegisterForm>
-            <a href="/registration">Add new user</a>
+            <a class="btn btn-primary" href="/registration">Add new user</a>
         </#if>
         <button type="submit" class="btn btn-primary">
             <#if isRegisterForm>
