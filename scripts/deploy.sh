@@ -6,7 +6,7 @@ echo 'Copy files...'
 
 scp -i ~/.ssh/ubuntu_20_server.pem \
     ~/IdeaProjects/sweater2/target/sweater2-1.0-SNAPSHOT.jar \
-    18.197.61.49:/home/ubuntu/
+    ubuntu@18.197.61.49:/home/ubuntu/
 
 echo 'Restart server...'
 
