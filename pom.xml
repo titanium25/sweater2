@@ -107,19 +107,19 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.flywaydb</groupId>-->
-<!--                <artifactId>flyway-maven-plugin</artifactId>-->
-<!--                <configuration>-->
-<!--                    <url>jdbc:postgresql://db-sweater.cnvkxb70zrfk.eu-central-1.rds.amazonaws.com/sweater3</url>-->
-<!--                    <user>postgres</user>-->
-<!--                    <password>password</password>-->
-<!--&lt;!&ndash;                    <schemas>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <schema>flywaymetadata</schema>&ndash;&gt;-->
-<!--&lt;!&ndash;                        <schema>test</schema>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </schemas>&ndash;&gt;-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:5432/sweater2</url>
+                    <user>postgres</user>
+                    <password>123</password>
+                    <schemas>
+                        <schema>flywaymetadata</schema>
+                        <schema>test</schema>
+                    </schemas>
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
