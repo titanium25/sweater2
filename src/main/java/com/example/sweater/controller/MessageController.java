@@ -72,20 +72,7 @@ public class MessageController {
             messageRepo.save(message);
         }
 
-        if (file != null && !file.getOriginalFilename().isEmpty()) {
-            File uploadDir = new File(uploadPath);
-
-            if (!uploadDir.exists()) {
-                uploadDir.mkdir();
-            }
-
-            String uuidFile = UUID.randomUUID().toString();
-            String resultFilename = uuidFile + "." + file.getOriginalFilename();
-
-            file.transferTo(new File(uploadPath + "/" + resultFilename));
-
-            message.setFilename(resultFilename);
-        }
+        MainController.saveFile(message, file, uploadPath);
 
         return "redirect:/user-messages/" + user;
     }

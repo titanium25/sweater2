@@ -65,7 +65,7 @@ public class MainController {
             BindingResult bindingResult,
             Model model,
             @RequestParam("file") MultipartFile file
-    ) throws IOException, IOException {
+    ) throws IOException {
         message.setAuthor(user);
 
         if (bindingResult.hasErrors()) {
@@ -74,20 +74,7 @@ public class MainController {
             model.mergeAttributes(errorsMap);
             model.addAttribute("message", message);
         } else {
-            if (file != null && !file.getOriginalFilename().isEmpty()) {
-                File uploadDir = new File(uploadPath);
-
-                if (!uploadDir.exists()) {
-                    uploadDir.mkdir();
-                }
-
-                String uuidFile = UUID.randomUUID().toString();
-                String resultFilename = uuidFile + "." + file.getOriginalFilename();
-
-                file.transferTo(new File(uploadPath + "/" + resultFilename));
-
-                message.setFilename(resultFilename);
-            }
+            saveFile(message, file, uploadPath);
 
             model.addAttribute("message", null);
 
@@ -99,6 +86,23 @@ public class MainController {
         model.addAttribute("messages", messages);
 
         return "main";
+    }
+
+    static void saveFile(@Valid Message message, @RequestParam("file") MultipartFile file, String uploadPath) throws IOException {
+        if (file != null && !file.getOriginalFilename().isEmpty()) {
+            File uploadDir = new File(uploadPath);
+
+            if (!uploadDir.exists()) {
+                uploadDir.mkdir();
+            }
+
+            String uuidFile = UUID.randomUUID().toString();
+            String resultFilename = uuidFile + "." + file.getOriginalFilename();
+
+            file.transferTo(new File(uploadPath + "/" + resultFilename));
+
+            message.setFilename(resultFilename);
+        }
     }
 
 

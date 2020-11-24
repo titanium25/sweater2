@@ -1,7 +1,7 @@
 <#include "security.ftlh">
 <#import "pager.ftlh" as p>
 
-<@p.pager url page />
+<@p.pager "/mian" page />
 <div class="card-columns">
     <#list page.content as message>
         <div class="card my-3">
